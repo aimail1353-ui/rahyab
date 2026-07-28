@@ -3,14 +3,13 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>RahYab | سامانه انتخاب رشته</title>
+    <title>RahYab | سامانه انتخاب رشته</title>
 
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -18,36 +17,83 @@ content="width=device-width,initial-scale=1">
 
 <div class="container">
 
-<header>
+    <header>
 
-<h1>RahYab</h1>
+        <h1>RahYab</h1>
 
-<p>
+        <p>سامانه هوشمند کشف استعداد و انتخاب رشته</p>
 
-سامانه هوشمند کشف استعداد و انتخاب رشته
+    </header>
 
-</p>
+    <main id="app">
 
-</header>
+        <div id="welcomePage">
 
-<main id="app">
+            <button id="startButton">
+                شروع آزمون
+            </button>
 
-<button id="startButton">
+        </div>
 
-شروع آزمون
+        <div id="studentForm" style="display:none;">
 
-</button>
+            <h2>مشخصات دانش‌آموز</h2>
 
-</main>
+            <form id="frmStudent">
+
+                <div class="row">
+                    <label>نام</label>
+                    <input type="text" id="firstName" required>
+                </div>
+
+                <div class="row">
+                    <label>نام خانوادگی</label>
+                    <input type="text" id="lastName" required>
+                </div>
+
+                <div class="row">
+                    <label>جنسیت</label>
+                    <select id="gender">
+                        <option>دختر</option>
+                        <option>پسر</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <label>پایه تحصیلی</label>
+                    <select id="grade">
+                        <option>نهم</option>
+                        <option>دهم</option>
+                        <option>یازدهم</option>
+                        <option>دوازدهم</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <label>شهر</label>
+                    <input type="text" id="city">
+                </div>
+
+                <div class="row">
+                    <label>مدرسه (اختیاری)</label>
+                    <input type="text" id="school">
+                </div>
+
+                <button type="submit">
+                    ادامه
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
 
 </div>
 
 <script src="js/questions.js"></script>
-
 <script src="js/analyzer.js"></script>
-
 <script src="js/app.js"></script>
 
 </body>
-
 </html>
