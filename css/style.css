@@ -359,3 +359,12 @@ body{
     }
 
 }
+.answer-btn.selected{
+
+    background:#1976d2;
+
+    color:#ffffff;
+
+    border-color:#1976d2;
+
+}

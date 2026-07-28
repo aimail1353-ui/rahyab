@@ -60,36 +60,52 @@ function showQuestion() {
         `${((currentQuestion + 1) / questionBank.length) * 100}%`;
 
     answerButtons.innerHTML = "";
+answerScale.forEach((title, index) => {
 
-    answerScale.forEach((title, index) => {
+    const btn = document.createElement("button");
 
-        const btn = document.createElement("button");
+    btn.className = "answer-btn";
 
-        btn.className = "answer-btn";
+    btn.textContent = title;
 
-        btn.textContent = title;
+    // اگر قبلاً انتخاب شده باشد
+    if (
+        answers[currentQuestion] &&
+        answers[currentQuestion].score === index + 1
+    ) {
+        btn.classList.add("selected");
+    }
 
-        btn.onclick = function () {
+    btn.onclick = function () {
 
-            answers[currentQuestion] = {
+        // حذف انتخاب قبلی
+        document.querySelectorAll(".answer-btn").forEach(b => {
+            b.classList.remove("selected");
+        });
 
-                id: q.id,
+        // انتخاب جدید
+        btn.classList.add("selected");
 
-                section: q.section,
+        // ذخیره پاسخ
+        answers[currentQuestion] = {
 
-                dimension: q.dimension,
+            id: q.id,
 
-                score: index + 1
+            section: q.section,
 
-            };
+            dimension: q.dimension,
 
-            nextQuestion.disabled = false;
+            score: index + 1
 
         };
 
-        answerButtons.appendChild(btn);
+        nextQuestion.disabled = false;
 
-    });
+    };
+
+    answerButtons.appendChild(btn);
+
+});
 
     nextQuestion.disabled =
         answers[currentQuestion] ? false : true;
