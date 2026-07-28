@@ -1,87 +1,361 @@
+/* ==========================================
+   RahYab v1.0
+   File : style.css
+   ========================================== */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
 
-font-family:tahoma;
+    font-family:Tahoma,Vazirmatn,sans-serif;
 
-background:#edf2f7;
+    background:#f5f7fb;
+
+    color:#222;
+
+    direction:rtl;
+
+    line-height:1.8;
 
 }
 
 .container{
 
-width:90%;
+    width:95%;
 
-max-width:900px;
+    max-width:1000px;
 
-margin:auto;
-
-margin-top:50px;
-
-background:white;
-
-padding:40px;
-
-border-radius:15px;
-
-box-shadow:0 5px 20px rgba(0,0,0,.1);
+    margin:40px auto;
 
 }
 
-header{
+.page{
 
-text-align:center;
-
-margin-bottom:40px;
+    margin-top:30px;
 
 }
 
-h1{
+.main-header{
 
-font-size:42px;
+    text-align:center;
 
-color:#1565c0;
-
-}
-
-p{
-
-margin-top:15px;
-
-font-size:20px;
-
-color:#555;
+    margin-bottom:30px;
 
 }
 
-#startButton{
+.main-header h1{
 
-padding:15px 40px;
+    color:#0d47a1;
 
-font-size:20px;
+    font-size:42px;
 
-background:#1565c0;
-
-color:white;
-
-border:none;
-
-border-radius:10px;
-
-cursor:pointer;
-
-display:block;
-
-margin:auto;
+    margin-bottom:10px;
 
 }
 
-#startButton:hover{
+.main-header p{
 
-background:#0d47a1;
+    color:#555;
+
+    font-size:18px;
+
+}
+
+.card{
+
+    background:#ffffff;
+
+    border-radius:16px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}/* ==========================================
+   Forms
+========================================== */
+
+.row{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:18px;
+
+}
+
+.row label{
+
+    margin-bottom:8px;
+
+    font-weight:bold;
+
+    color:#333;
+
+}
+
+.row input,
+.row select{
+
+    padding:12px;
+
+    border:1px solid #d0d7de;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.3s;
+
+    background:#fff;
+
+}
+
+.row input:focus,
+.row select:focus{
+
+    border-color:#1976d2;
+
+    box-shadow:0 0 8px rgba(25,118,210,.20);
+
+}
+
+/* ==========================================
+   Buttons
+========================================== */
+
+.primary-btn,
+#nextQuestion,
+#prevQuestion,
+#printReport,
+#restartExam{
+
+    padding:12px 24px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#1976d2;
+
+    color:#fff;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.primary-btn:hover,
+#nextQuestion:hover,
+#prevQuestion:hover,
+#printReport:hover,
+#restartExam:hover{
+
+    background:#1259a7;
+
+}
+
+/* ==========================================
+   Answer Buttons
+========================================== */
+
+.answer-buttons{
+
+    display:grid;
+
+    gap:12px;
+
+    margin:25px 0;
+
+}
+
+.answer-btn{
+
+    padding:14px;
+
+    border:1px solid #1976d2;
+
+    border-radius:10px;
+
+    background:#fff;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.answer-btn:hover{
+
+    background:#1976d2;
+
+    color:#fff;
+
+}/* ==========================================
+   Progress Bar
+========================================== */
+
+.progress{
+
+    width:100%;
+
+    height:12px;
+
+    background:#e5e7eb;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin:20px 0;
+
+}
+
+#progressBar{
+
+    width:0%;
+
+    height:100%;
+
+    background:#4caf50;
+
+    transition:width .4s ease;
+
+}
+
+/* ==========================================
+   Question Box
+========================================== */
+
+.question-box{
+
+    background:#f8fafc;
+
+    border-right:5px solid #1976d2;
+
+    border-radius:10px;
+
+    padding:20px;
+
+    margin:20px 0;
+
+    font-size:20px;
+
+    min-height:120px;
+
+}
+
+/* ==========================================
+   Navigation
+========================================== */
+
+.navigation{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+/* ==========================================
+   Result Page
+========================================== */
+
+#studentSummary,
+#analysisResult,
+#recommendation,
+#chartContainer{
+
+    margin-top:20px;
+
+    padding:20px;
+
+    background:#f8fafc;
+
+    border-radius:10px;
+
+    border:1px solid #e5e7eb;
+
+}
+
+.result-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    justify-content:center;
+
+    margin-top:30px;
+
+}
+
+/* ==========================================
+   Footer
+========================================== */
+
+.main-footer{
+
+    text-align:center;
+
+    color:#777;
+
+    margin:40px 0 20px;
+
+    font-size:14px;
+
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media(max-width:768px){
+
+    .container{
+
+        width:95%;
+
+    }
+
+    .card{
+
+        padding:20px;
+
+    }
+
+    .main-header h1{
+
+        font-size:32px;
+
+    }
+
+    .navigation{
+
+        flex-direction:column;
+
+    }
+
+    .result-buttons{
+
+        flex-direction:column;
+
+    }
 
 }
